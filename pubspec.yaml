@@ -11,6 +11,8 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+  flutter_svg: ^1.0.0
+  google_fonts: ^2.2.0
 
 dev_dependencies:
   flutter_test:
@@ -22,4 +24,5 @@ flutter:
   uses-material-design: true
   assets:
     - assets/fonts/
+    - assets/images/
     - assets/images/svg/
