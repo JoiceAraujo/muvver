@@ -1,5 +1,12 @@
 {
   "@@locale": "pt",
 
-  "appTitle": "Muvver"
+  "appTitle": "Muvver",
+  "traveler": "Viajante",
+  "travelerDescription": "Vai viajar pra onde?",
+  "sender": "Remetente",
+  "senderDescription": "Pra onde quer enviar seu objeto?",
+  "slogan01": "Facilitando seus ",
+  "slogan02": "envios.",
+  "homeDescription": "Entregue ou envie."
 }
