@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../transport_type/transport_type/transport_type_view_controller.dart';
 import 'home_view.dart';
 import 'home_view_model.dart';
 
@@ -27,8 +28,7 @@ class _HomeViewControllerState extends State<HomeViewController> {
 
   void _bind() {
     widget.viewModel.onTapTraveler = () {
-      // TODO: Navigate to TransportTypeView
-      debugPrint('Navigate to TransportTypeView');
+      Navigator.pushNamed(context, TransportTypeViewController.route);
     };
   }
 }

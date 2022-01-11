@@ -36,7 +36,7 @@ class HomeView extends StatelessWidget {
             Text.rich(
               TextSpan(
                 text: l10n.slogan01,
-                style: ApplicationTypography.titilliumWeb20Regular,
+                style: ApplicationTypography.titilliumWeb20RegularGray,
                 children: [
                   TextSpan(
                     text: l10n.slogan02,
@@ -50,7 +50,7 @@ class HomeView extends StatelessWidget {
             Text(
               l10n.homeDescription,
               textAlign: TextAlign.center,
-              style: ApplicationTypography.titilliumWeb16Regular,
+              style: ApplicationTypography.titilliumWeb16RegularGray32,
             ),
             const SizedBox(height: 40),
             HomeCard(
