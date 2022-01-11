@@ -30,7 +30,7 @@ class HomeCard extends StatelessWidget {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-              ApplicationColors.darkGray,
+              ApplicationColors.gray,
               ApplicationColors.lightGray,
             ],
           ),
