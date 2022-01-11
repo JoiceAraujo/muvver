@@ -8,5 +8,17 @@
   "senderDescription": "Pra onde quer enviar seu objeto?",
   "slogan01": "Facilitando seus ",
   "slogan02": "envios.",
-  "homeDescription": "Entregue ou envie."
+  "homeDescription": "Entregue ou envie.",
+  "goForward": "Avançar",
+  "airplane": "Avião",
+  "bike": "Bicicleta",
+  "boat": "Embarcação",
+  "bus": "Ônibus",
+  "car": "Carro",
+  "motorcycle": "Moto",
+  "train": "Trem",
+  "truck": "Caminhão",
+  "van": "Van",
+  "transportTypeTravel": "Qual será o meio de transporte da sua viagem?",
+  "transport": "Transporte"
 }
