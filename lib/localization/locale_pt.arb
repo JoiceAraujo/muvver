@@ -20,5 +20,15 @@
   "truck": "Caminhão",
   "van": "Van",
   "transportTypeTravel": "Qual será o meio de transporte da sua viagem?",
-  "transport": "Transporte"
+  "transport": "Transporte",
+  "travelRoute": "Qual o trajeto da sua viagem?",
+  "cancel": "Cancelar",
+  "dateRouteTravel": "Selecione a data e rota da sua viagem",
+  "originCity": "Cidade de Origem",
+  "destinationCity": "Cidade de Destino",
+  "departureDate": "Data de partida",
+  "arrivalDate": "Data de chegada",
+  "addMidpoint": "Adicionar ponto intermediário",
+  "increaseMatchChance": "E aumente sua chance de match",
+  "dateFormat": "dd/MM/yyyy"
 }
