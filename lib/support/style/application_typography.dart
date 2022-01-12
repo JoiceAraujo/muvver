@@ -16,10 +16,22 @@ class ApplicationTypography {
     color: ApplicationColors.white,
   );
 
+  static final TextStyle titilliumWeb14RegularGray32 = GoogleFonts.titilliumWeb(
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+    color: ApplicationColors.gray32,
+  );
+
   static final TextStyle titilliumWeb16RegularGray32 = GoogleFonts.titilliumWeb(
     fontSize: 16,
     fontWeight: FontWeight.w400,
     color: ApplicationColors.gray32,
+  );
+
+  static final TextStyle titilliumWeb16RegularGray = GoogleFonts.titilliumWeb(
+    fontSize: 16,
+    fontWeight: FontWeight.w400,
+    color: ApplicationColors.gray,
   );
 
   static final TextStyle titilliumWeb20RegularGray = GoogleFonts.titilliumWeb(
@@ -52,9 +64,27 @@ class ApplicationTypography {
     color: ApplicationColors.gray,
   );
 
+  static final TextStyle titilliumWeb16BoldLightGray = GoogleFonts.titilliumWeb(
+    fontSize: 16,
+    fontWeight: FontWeight.w700,
+    color: ApplicationColors.lightGray,
+  );
+
   static final TextStyle titilliumWeb16BoldWhite = GoogleFonts.titilliumWeb(
     fontSize: 16,
     fontWeight: FontWeight.w700,
     color: ApplicationColors.white,
+  );
+
+  static final TextStyle titilliumWeb14BoldWhite = GoogleFonts.titilliumWeb(
+    fontSize: 14,
+    fontWeight: FontWeight.w700,
+    color: ApplicationColors.white,
+  );
+
+  static final TextStyle titilliumWeb14RegularGray = GoogleFonts.titilliumWeb(
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+    color: ApplicationColors.gray,
   );
 }
