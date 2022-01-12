@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../transportation_route/transportation_route/transportation_route_view_controller.dart';
 import 'transport_type_view.dart';
 import 'transport_type_view_model.dart';
 
@@ -27,8 +28,7 @@ class _TransportTypeViewControllerState extends State<TransportTypeViewControlle
 
   void _bind() {
     widget.viewModel.onTapGoForward = () {
-      // TODO Implement onTapGoForward
-      debugPrint('onTapGoForward');
+      Navigator.pushNamed(context, TransportationRouteViewController.route);
     };
   }
 }
