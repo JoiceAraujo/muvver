@@ -1,3 +1,4 @@
+import '../domain/get_predictions_use_case.dart';
 import 'transportation_route_view.dart';
 
 abstract class TransportationRouteProtocol extends TransportationRouteViewModelProtocol {
@@ -6,12 +7,27 @@ abstract class TransportationRouteProtocol extends TransportationRouteViewModelP
 }
 
 class TransportationRouteViewModel extends TransportationRouteProtocol {
+  final GetPredictionsUseCaseProtocol useCase;
+  String? _originCity;
+  String? _destinationCity;
   DateTime? _arrivalDate;
   DateTime? _departureDate;
+  List<String>? _predictions;
 
   @override
-  void searchCity() {
-    // TODO: implement searchCity
+  List<String> get predictions => _predictions ?? [];
+
+  TransportationRouteViewModel({required this.useCase});
+
+  void _searchCity(String? input) {
+    useCase.execute(
+      input: input ?? '',
+      success: (result) {
+        _predictions = result;
+        notifyListeners();
+      },
+      failure: (_) {},
+    );
   }
 
   @override
@@ -32,5 +48,17 @@ class TransportationRouteViewModel extends TransportationRouteProtocol {
   @override
   void updateDepartureDate(DateTime? date) {
     _departureDate = date;
+  }
+
+  @override
+  void updateOriginCity(String? originCity) {
+    _originCity = originCity;
+    _searchCity(originCity);
+  }
+
+  @override
+  void updateDestinationCity(String? destinationCity) {
+    _destinationCity = destinationCity;
+    _searchCity(destinationCity);
   }
 }

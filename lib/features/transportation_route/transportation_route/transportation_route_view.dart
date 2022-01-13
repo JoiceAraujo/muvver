@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/localization.dart';
+import 'package:flutter_typeahead/flutter_typeahead.dart';
 
 import '../../../support/components/date_selection.dart';
 import '../../../support/components/gradient_app_bar.dart';
@@ -7,17 +8,20 @@ import '../../../support/style/application_colors.dart';
 import '../../../support/style/application_typography.dart';
 
 abstract class TransportationRouteViewModelProtocol with ChangeNotifier {
-  void searchCity();
+  List<String> get predictions;
+
   void didTapCancel();
   void didTapGoForward();
   void updateArrivalDate(DateTime? date);
   void updateDepartureDate(DateTime? date);
+  void updateOriginCity(String? originCity);
+  void updateDestinationCity(String? destinationCity);
 }
 
 class TransportationRouteView extends StatelessWidget {
   final TransportationRouteViewModelProtocol viewModel;
-  final TextEditingController _originCity = TextEditingController();
-  final TextEditingController _destinationCity = TextEditingController();
+  final TextEditingController _originCityController = TextEditingController();
+  final TextEditingController _destinationCityController = TextEditingController();
 
   TransportationRouteView({Key? key, required this.viewModel}) : super(key: key);
 
@@ -57,6 +61,7 @@ class TransportationRouteView extends StatelessWidget {
               shrinkWrap: true,
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
               children: [
+                const SizedBox(height: 16),
                 Text(
                   l10n.dateRouteTravel,
                   style: ApplicationTypography.titilliumWeb16BoldGray,
@@ -67,26 +72,43 @@ class TransportationRouteView extends StatelessWidget {
                   updateDepartureDate: viewModel.updateDepartureDate,
                 ),
                 const SizedBox(height: 20),
-                TextFormField(
-                  onTap: viewModel.searchCity,
-                  controller: _originCity,
-                  keyboardType: TextInputType.text,
-                  cursorColor: ApplicationColors.gray12,
-                  decoration: InputDecoration(
-                    labelText: l10n.originCity,
-                    prefixIcon: const Icon(Icons.search, color: ApplicationColors.gray),
-                  ),
-                ),
-                const SizedBox(height: 20),
-                TextFormField(
-                  onTap: viewModel.searchCity,
-                  controller: _destinationCity,
-                  keyboardType: TextInputType.text,
-                  cursorColor: ApplicationColors.gray12,
-                  decoration: InputDecoration(
-                    labelText: l10n.destinationCity,
-                    prefixIcon: const Icon(Icons.search, color: ApplicationColors.gray),
-                  ),
+                AnimatedBuilder(
+                  animation: viewModel,
+                  builder: (_, __) {
+                    return Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        TypeAheadField(
+                          itemBuilder: _suggestionItemBuilder,
+                          suggestionsCallback: (pattern) => viewModel.predictions,
+                          textFieldConfiguration: TextFieldConfiguration(
+                            controller: _originCityController,
+                            cursorColor: ApplicationColors.gray12,
+                            onChanged: viewModel.updateOriginCity,
+                            decoration: _getTextFieldDecoration(l10n.originCity),
+                          ),
+                          onSuggestionSelected: (String selection) {
+                            _originCityController.text = selection;
+                            viewModel.updateOriginCity(selection);
+                          },
+                        ),
+                        const SizedBox(height: 20),
+                        TypeAheadField(
+                          itemBuilder: _suggestionItemBuilder,
+                          suggestionsCallback: (pattern) => viewModel.predictions,
+                          textFieldConfiguration: TextFieldConfiguration(
+                              controller: _destinationCityController,
+                              cursorColor: ApplicationColors.gray12,
+                              onChanged: viewModel.updateDestinationCity,
+                              decoration: _getTextFieldDecoration(l10n.destinationCity)),
+                          onSuggestionSelected: (String selection) {
+                            _destinationCityController.text = selection;
+                            viewModel.updateDestinationCity(selection);
+                          },
+                        ),
+                      ],
+                    );
+                  },
                 ),
                 const SizedBox(height: 16),
                 ElevatedButton(
@@ -98,6 +120,17 @@ class TransportationRouteView extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+
+  Widget _suggestionItemBuilder(BuildContext context, String suggestion) {
+    return ListTile(title: Text(suggestion));
+  }
+
+  InputDecoration _getTextFieldDecoration(String label) {
+    return InputDecoration(
+      labelText: label,
+      prefixIcon: const Icon(Icons.search, color: ApplicationColors.gray),
     );
   }
 }
