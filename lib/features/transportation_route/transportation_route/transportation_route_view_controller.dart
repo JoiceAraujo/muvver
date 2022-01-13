@@ -28,7 +28,7 @@ class _TransportationRouteViewControllerState extends State<TransportationRouteV
 
   void _bind() {
     widget.viewModel.onTapGoForward = () {
-      // TODO: Implementes navigator
+      // TODO: Implements navigator
       debugPrint('Navigator');
     };
 
