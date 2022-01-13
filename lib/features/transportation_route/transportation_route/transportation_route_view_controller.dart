@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../home/home/home_view_controller.dart';
+import '../../package-size/package-size/package_size_view_controller.dart';
 import 'transportation_route_view.dart';
 import 'transportation_route_view_model.dart';
 
@@ -28,8 +29,7 @@ class _TransportationRouteViewControllerState extends State<TransportationRouteV
 
   void _bind() {
     widget.viewModel.onTapGoForward = () {
-      // TODO: Implements navigator
-      debugPrint('Navigator');
+      Navigator.pushNamed(context, PackageSizeViewController.route);
     };
 
     widget.viewModel.onTapCancel = () {
