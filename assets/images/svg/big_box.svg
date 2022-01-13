@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="a" x1="0.5" y1="1" x2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#159f59"/>
+      <stop offset="1" stop-color="#22d57b"/>
+    </linearGradient>
+  </defs>
+  <rect fill="none" width="32" height="32"/>
+  <g transform="translate(-3021.023 -3989)">
+    <rect fill="url(#a)" width="27.308" height="25.166" rx="1" transform="translate(3023.308 3992.577)"/>
+    <rect fill="#ffffff" width="4" height="6.712" transform="translate(3035.308 3992.577)"/>
+    <g transform="translate(3045.121 4012.009)">
+      <path fill="#ffffff" d="M2994.478,4005.091l.9-1.091.8,1.091h-.8" transform="translate(-2994.478 -4004)"/>
+      <path fill="#ffffff" d="M2994.844,4004.729v2.512h.632v-2.512" transform="translate(-2994.295 -4003.638)"/>
+      <path fill="#ffffff" d="M2994.478,4005.091l.9-1.091.8,1.091h-.8" transform="translate(-2992.198 -4004)"/>
+      <path fill="#ffffff" d="M2994.844,4004.728v2.513h.632v-2.513" transform="translate(-2992.015 -4003.638)"/>
+      <path fill="#ffffff" d="M0,0V4.081H.459V0" transform="translate(4.082 3.893) rotate(90)"/>
+    </g>
+  </g>
+</svg>
