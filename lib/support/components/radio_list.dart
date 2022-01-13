@@ -11,9 +11,11 @@ class RadioList<T> extends StatelessWidget {
   final void Function(T? value) onChanged;
   final String Function(T value) iconByType;
   final String Function(T value, Localization l10n) nameByType;
+  final String Function(T value, Localization l10n)? descriptionByType;
 
   const RadioList({
     Key? key,
+    this.descriptionByType,
     required this.values,
     required this.selectedValue,
     required this.onChanged,
@@ -46,9 +48,15 @@ class RadioList<T> extends StatelessWidget {
       children: [
         SvgPicture.asset(iconByType(value)),
         const SizedBox(width: 16),
-        Text(
-          nameByType(value, l10n),
-          style: ApplicationTypography.titilliumWeb12BoldGray,
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              nameByType(value, l10n),
+              style: ApplicationTypography.titilliumWeb12BoldGray,
+            ),
+            _description(value, l10n)
+          ],
         ),
         const Spacer(),
         Radio(
@@ -58,6 +66,15 @@ class RadioList<T> extends StatelessWidget {
           activeColor: ApplicationColors.green,
         ),
       ],
+    );
+  }
+
+  Widget _description(T value, Localization l10n) {
+    if (descriptionByType == null) return Container();
+
+    return Text(
+      descriptionByType?.call(value, l10n) ?? '',
+      style: ApplicationTypography.titilliumWeb12RegularGray32,
     );
   }
 }

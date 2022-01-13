@@ -30,5 +30,16 @@
   "arrivalDate": "Data de chegada",
   "addMidpoint": "Adicionar ponto intermediário",
   "increaseMatchChance": "E aumente sua chance de match",
-  "dateFormat": "dd/MM/yyyy"
+  "dateFormat": "dd/MM/yyyy",
+  "emptyPackageSize": "00 x 00 cm",
+  "backpack": "Mochila",
+  "bigBox": "Caixa grande",
+  "bigSuitcase": "Mala grande",
+  "book": "Livro",
+  "envelope": "Envelope",
+  "shoeBox": "Caixa de sapato",
+  "packageSizeSimilarTo": "O volume que você pode deslocar tem tamanho similar a que?",
+  "beMuvver": "Ser um Muvver",
+  "sizes": "Tamanhos",
+  "skipStep": "Pular Etapa"
 }

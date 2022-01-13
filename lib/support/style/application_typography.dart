@@ -82,9 +82,21 @@ class ApplicationTypography {
     color: ApplicationColors.white,
   );
 
+  static final TextStyle titilliumWeb14BoldGray = GoogleFonts.titilliumWeb(
+    fontSize: 14,
+    fontWeight: FontWeight.w700,
+    color: ApplicationColors.gray,
+  );
+
   static final TextStyle titilliumWeb14RegularGray = GoogleFonts.titilliumWeb(
     fontSize: 14,
     fontWeight: FontWeight.w400,
     color: ApplicationColors.gray,
+  );
+
+  static final TextStyle titilliumWeb12RegularGray32 = GoogleFonts.titilliumWeb(
+    fontSize: 12,
+    fontWeight: FontWeight.w400,
+    color: ApplicationColors.gray32,
   );
 }
