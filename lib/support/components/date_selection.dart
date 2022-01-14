@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/localization.dart';
 import 'package:intl/intl.dart';
 
+import '../style/application_typography.dart';
+
 class DateSelection extends StatefulWidget {
   final void Function(DateTime? date) updateArrivalDate;
   final void Function(DateTime? date) updateDepartureDate;
@@ -31,6 +33,7 @@ class _DateSelectionState extends State<DateSelection> {
             onTap: () => _updateDepartureDate(l10n),
             child: TextFormField(
               enabled: false,
+              style: ApplicationTypography.titilliumWeb15RegularGray,
               controller: _departureDate,
               decoration: InputDecoration(labelText: l10n.departureDate),
             ),
@@ -42,6 +45,7 @@ class _DateSelectionState extends State<DateSelection> {
             onTap: () => _updateArrivalDate(l10n),
             child: TextFormField(
               enabled: false,
+              style: ApplicationTypography.titilliumWeb15RegularGray,
               controller: _arrivalDate,
               decoration: InputDecoration(labelText: l10n.arrivalDate),
             ),

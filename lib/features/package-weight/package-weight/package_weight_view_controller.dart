@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../home/home/home_view_controller.dart';
+import '../../minimum-price/minimum-price/minimum_price_view_controller.dart';
 import 'package_weight_view.dart';
 import 'package_weight_view_model.dart';
 
@@ -32,13 +33,11 @@ class _PackageWeightViewControllerState extends State<PackageWeightViewControlle
     };
 
     widget.viewModel.onTapSkipStep = () {
-      // TODO: Implements price view
-      debugPrint('Skip step');
+      Navigator.pushNamed(context, MinimumPriceViewController.route);
     };
 
     widget.viewModel.onTapGoForward = () {
-      // TODO: Implements price view
-      debugPrint('Go Forward');
+      Navigator.pushNamed(context, MinimumPriceViewController.route);
     };
   }
 }
