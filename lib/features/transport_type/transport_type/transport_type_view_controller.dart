@@ -28,7 +28,9 @@ class _TransportTypeViewControllerState extends State<TransportTypeViewControlle
 
   void _bind() {
     widget.viewModel.onTapGoForward = () {
-      Navigator.pushNamed(context, TransportationRouteViewController.route);
+      final transportation = widget.viewModel.transportation;
+
+      Navigator.pushNamed(context, TransportationRouteViewController.route, arguments: transportation);
     };
   }
 }

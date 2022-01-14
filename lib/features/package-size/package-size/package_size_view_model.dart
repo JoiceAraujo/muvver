@@ -1,19 +1,27 @@
 import 'package:flutter_gen/gen_l10n/localization.dart';
 
+import '../../../models/transportation.dart';
 import '../../../support/utils/constants.dart';
 import 'package_size_view.dart';
 
 abstract class PackageSizeProtocol extends PackageSizeViewModelProtocol {
+  Transportation get transportation;
+
   void Function()? onTapCancel;
   void Function()? onTapSkipStep;
   void Function()? onTapGoForward;
 }
 
 class PackageSizeViewModel extends PackageSizeProtocol {
-  PackageSize? _packageSize;
+  final Transportation _transportation;
 
   @override
-  PackageSize? get packageSize => _packageSize;
+  Transportation get transportation => _transportation;
+
+  @override
+  PackageSize? get packageSize => _transportation.packageSize;
+
+  PackageSizeViewModel(this._transportation);
 
   @override
   void didTapCancel() {
@@ -22,6 +30,7 @@ class PackageSizeViewModel extends PackageSizeProtocol {
 
   @override
   void didTapSkipStep() {
+    _transportation.packageSize = null;
     onTapSkipStep?.call();
   }
 
@@ -32,7 +41,7 @@ class PackageSizeViewModel extends PackageSizeProtocol {
 
   @override
   void updatePackageSize(PackageSize? value) {
-    _packageSize = value;
+    _transportation.packageSize = value;
     notifyListeners();
   }
 

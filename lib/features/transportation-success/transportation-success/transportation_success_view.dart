@@ -23,41 +23,43 @@ class TransportationSuccessView extends StatelessWidget {
         slivers: [
           SliverFillRemaining(
             hasScrollBody: false,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  const Spacer(),
-                  SvgPicture.asset(Constants.sendIconPath),
-                  const Spacer(),
-                  Text(
-                    l10n.tripCreated,
-                    textAlign: TextAlign.center,
-                    style: ApplicationTypography.titilliumWeb32RegularGray,
-                  ),
-                  const SizedBox(height: 16),
-                  Text(
-                    l10n.checkingPackages,
-                    textAlign: TextAlign.center,
-                    style: ApplicationTypography.titilliumWeb14RegularGray,
-                  ),
-                  const SizedBox(height: 28),
-                  Text(
-                    l10n.veracityDeclaration,
-                    textAlign: TextAlign.center,
-                    style: ApplicationTypography.titilliumWeb12RegularGray54,
-                  ),
-                  const Spacer(),
-                  ElevatedButton(
-                    onPressed: viewModel.dipTapViewPackages,
-                    child: Text(
-                      l10n.viewPackages,
-                      style: ApplicationTypography.titilliumWeb16BoldWhite,
+            child: SafeArea(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    const Spacer(),
+                    SvgPicture.asset(Constants.sendIconPath),
+                    const Spacer(),
+                    Text(
+                      l10n.tripCreated,
+                      textAlign: TextAlign.center,
+                      style: ApplicationTypography.titilliumWeb32RegularGray,
                     ),
-                  ),
-                  const SizedBox(height: 8),
-                ],
+                    const SizedBox(height: 16),
+                    Text(
+                      l10n.checkingPackages,
+                      textAlign: TextAlign.center,
+                      style: ApplicationTypography.titilliumWeb14RegularGray,
+                    ),
+                    const SizedBox(height: 28),
+                    Text(
+                      l10n.veracityDeclaration,
+                      textAlign: TextAlign.center,
+                      style: ApplicationTypography.titilliumWeb12RegularGray54,
+                    ),
+                    const Spacer(),
+                    ElevatedButton(
+                      onPressed: viewModel.dipTapViewPackages,
+                      child: Text(
+                        l10n.viewPackages,
+                        style: ApplicationTypography.titilliumWeb16BoldWhite,
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                  ],
+                ),
               ),
             ),
           ),

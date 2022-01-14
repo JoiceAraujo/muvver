@@ -1,17 +1,23 @@
 import 'package:flutter_gen/gen_l10n/localization.dart';
 
+import '../../../models/transportation.dart';
 import '../../../support/utils/constants.dart';
 import 'transport_type_view.dart';
 
 abstract class TransportTypeProtocol extends TransportTypeViewModelProtocol {
+  Transportation get transportation;
+
   void Function()? onTapGoForward;
 }
 
 class TransportTypeViewModel extends TransportTypeProtocol {
-  TransportType? _transportType = TransportType.car;
+  final Transportation _transportation = Transportation(transportType: TransportType.car);
 
   @override
-  TransportType? get transportType => _transportType;
+  Transportation get transportation => _transportation;
+
+  @override
+  TransportType? get transportType => _transportation.transportType;
 
   @override
   void didTapGoForward() {
@@ -20,7 +26,7 @@ class TransportTypeViewModel extends TransportTypeProtocol {
 
   @override
   void updateTransportType(TransportType? value) {
-    _transportType = value;
+    _transportation.transportType = value;
     notifyListeners();
   }
 

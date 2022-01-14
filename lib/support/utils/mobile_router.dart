@@ -14,17 +14,54 @@ import '../../features/transportation-success/transportation-success/transportat
 import '../../features/transportation-success/transportation_success_factory.dart';
 import '../../features/transportation_route/transportation_route/transportation_route_view_controller.dart';
 import '../../features/transportation_route/transportation_route_factory.dart';
+import '../../models/transportation.dart';
 
 class MobileRouter {
   static const String initialRoute = HomeViewController.route;
 
   static final Map<String, WidgetBuilder> routes = {
-    HomeViewController.route: (_) => HomeFactory.home(),
-    TransportTypeViewController.route: (_) => TransportTypeFactory.transportType(),
-    TransportationRouteViewController.route: (_) => TransportationRouteFactory.transportationRoute(),
-    PackageSizeViewController.route: (_) => PackageSizeFactory.packageSize(),
-    PackageWeightViewController.route: (_) => PackageWeightFactory.packageWeight(),
-    MinimumPriceViewController.route: (_) => MinimumPriceFactory.minimumPrice(),
-    TransportationSuccessViewController.route: (_) => TransportationSuccessFactory.transportationSuccess(),
+    HomeViewController.route: _homeViewController,
+    TransportTypeViewController.route: _transportTypeViewController,
+    TransportationRouteViewController.route: _transportationRouteViewController,
+    PackageSizeViewController.route: _packageSizeViewController,
+    PackageWeightViewController.route: _packageWeightViewController,
+    MinimumPriceViewController.route: _minimumPriceViewController,
+    TransportationSuccessViewController.route: _transportationSuccessViewController,
   };
+
+  static Widget _homeViewController(BuildContext context) {
+    return HomeFactory.home();
+  }
+
+  static Widget _transportTypeViewController(BuildContext context) {
+    return TransportTypeFactory.transportType();
+  }
+
+  static Widget _transportationRouteViewController(BuildContext context) {
+    final transportation = ModalRoute.of(context)?.settings.arguments as Transportation;
+
+    return TransportationRouteFactory.transportationRoute(transportation);
+  }
+
+  static Widget _packageSizeViewController(BuildContext context) {
+    final transportation = ModalRoute.of(context)?.settings.arguments as Transportation;
+
+    return PackageSizeFactory.packageSize(transportation);
+  }
+
+  static Widget _packageWeightViewController(BuildContext context) {
+    final transportation = ModalRoute.of(context)?.settings.arguments as Transportation;
+
+    return PackageWeightFactory.packageWeight(transportation);
+  }
+
+  static Widget _minimumPriceViewController(BuildContext context) {
+    final transportation = ModalRoute.of(context)?.settings.arguments as Transportation;
+
+    return MinimumPriceFactory.minimumPrice(transportation);
+  }
+
+  static Widget _transportationSuccessViewController(BuildContext context) {
+    return TransportationSuccessFactory.transportationSuccess();
+  }
 }

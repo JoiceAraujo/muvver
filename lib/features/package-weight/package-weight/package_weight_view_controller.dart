@@ -32,12 +32,14 @@ class _PackageWeightViewControllerState extends State<PackageWeightViewControlle
       Navigator.popUntil(context, ModalRoute.withName(HomeViewController.route));
     };
 
-    widget.viewModel.onTapSkipStep = () {
-      Navigator.pushNamed(context, MinimumPriceViewController.route);
-    };
+    widget.viewModel.onTapSkipStep = _goForward;
 
-    widget.viewModel.onTapGoForward = () {
-      Navigator.pushNamed(context, MinimumPriceViewController.route);
-    };
+    widget.viewModel.onTapGoForward = _goForward;
+  }
+
+  void _goForward() {
+    final transportation = widget.viewModel.transportation;
+
+    Navigator.pushNamed(context, MinimumPriceViewController.route, arguments: transportation);
   }
 }
