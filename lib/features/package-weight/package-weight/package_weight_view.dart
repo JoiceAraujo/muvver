@@ -10,9 +10,9 @@ import 'package_weight_view_model.dart';
 abstract class PackageWeightViewModelProtocol with ChangeNotifier {
   PackageWeight? get packageWeight;
 
-  void Function()? didTapCancel();
-  void Function()? didTapSkipStep();
-  void Function()? didTapGoForward();
+  void didTapCancel();
+  void didTapSkipStep();
+  void didTapGoForward();
   void updatePackageWeight(PackageWeight? value);
   String packageWeightIconByType(PackageWeight packageWeight);
   String packageWeightNameByType(PackageWeight packageWeight, Localization l10n);
