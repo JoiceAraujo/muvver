@@ -10,6 +10,8 @@ import '../../features/package-weight/package-weight/package_weight_view_control
 import '../../features/package-weight/package_weight_factory.dart';
 import '../../features/transport_type/transport_type/transport_type_view_controller.dart';
 import '../../features/transport_type/transport_type_factory.dart';
+import '../../features/transportation-success/transportation-success/transportation_success_view_controller.dart';
+import '../../features/transportation-success/transportation_success_factory.dart';
 import '../../features/transportation_route/transportation_route/transportation_route_view_controller.dart';
 import '../../features/transportation_route/transportation_route_factory.dart';
 
@@ -23,5 +25,6 @@ class MobileRouter {
     PackageSizeViewController.route: (_) => PackageSizeFactory.packageSize(),
     PackageWeightViewController.route: (_) => PackageWeightFactory.packageWeight(),
     MinimumPriceViewController.route: (_) => MinimumPriceFactory.minimumPrice(),
+    TransportationSuccessViewController.route: (_) => TransportationSuccessFactory.transportationSuccess(),
   };
 }

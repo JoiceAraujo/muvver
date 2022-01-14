@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="127.899" height="128.311" viewBox="0 0 127.899 128.311">
+  <g transform="translate(-120.438 -118.665)">
+    <path fill="#e8b949" d="M9.717,2.865,40.534,0l.078,24.308L0,25.233Z" transform="matrix(0.891, -0.454, 0.454, 0.891, 148.346, 172.273)"/>
+    <g transform="translate(120.438 118.665)">
+      <path fill="#f2d99d" d="M292.726,96.524,196.454,143.2l-31.627-18.26Z" transform="translate(-164.827 -96.524)"/>
+      <path fill="#f2d99d" d="M341.632,96.524l-80.841,55.583,31.627,18.26Z" transform="translate(-213.733 -96.524)"/>
+      <path fill="#e8c46d" d="M244.754,152.107,325.6,96.524,229.323,143.2l7.715,29.325Z" transform="translate(-197.696 -96.524)"/>
+      <path fill="#e0c992" d="M260.791,152.107l80.841-55.583-79.577,56.313Z" transform="translate(-213.733 -96.524)"/>
+      <path fill="#edd59a" d="M226.454,142.385l97.679-45.861L227.861,143.2Z" transform="translate(-196.234 -96.524)"/>
+      <path fill="#ededed" d="M293.531,255.858,206.62,275.166l20.535,11.856h0l.956.552,11.48-.826,5.536,10.65,14.962,8.638Z" transform="translate(-186.126 -177.725)"/>
+    </g>
+  </g>
+</svg>
