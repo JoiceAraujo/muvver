@@ -23,6 +23,7 @@ class ApplicationThemes {
       focusedBorder: _defaultInputBorder,
       disabledBorder: _defaultInputBorder,
       labelStyle: ApplicationTypography.titilliumWeb16RegularGray,
+      prefixStyle: ApplicationTypography.titilliumWeb14RegularGray,
       floatingLabelStyle: ApplicationTypography.titilliumWeb16RegularGray,
     ),
   );

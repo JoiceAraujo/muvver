@@ -99,4 +99,23 @@ class ApplicationTypography {
     fontWeight: FontWeight.w400,
     color: ApplicationColors.gray32,
   );
+
+  static final TextStyle titilliumWeb12RegularGray54 = GoogleFonts.titilliumWeb(
+    fontSize: 12,
+    fontWeight: FontWeight.w400,
+    color: ApplicationColors.gray54,
+  );
+
+  static final TextStyle titilliumWeb14RegularGrayUnderlined = GoogleFonts.titilliumWeb(
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+    color: ApplicationColors.gray,
+    decoration: TextDecoration.underline,
+  );
+
+  static final TextStyle titilliumWeb15RegularGray = GoogleFonts.titilliumWeb(
+    fontSize: 15,
+    fontWeight: FontWeight.w400,
+    color: ApplicationColors.gray,
+  );
 }
