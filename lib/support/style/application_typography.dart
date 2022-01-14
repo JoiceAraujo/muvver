@@ -118,4 +118,10 @@ class ApplicationTypography {
     fontWeight: FontWeight.w400,
     color: ApplicationColors.gray,
   );
+
+  static final TextStyle titilliumWeb32RegularGray = GoogleFonts.titilliumWeb(
+    fontSize: 32,
+    fontWeight: FontWeight.w400,
+    color: ApplicationColors.gray,
+  );
 }
