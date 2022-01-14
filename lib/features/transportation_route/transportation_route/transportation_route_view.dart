@@ -130,6 +130,7 @@ class TransportationRouteView extends StatelessWidget {
   InputDecoration _getTextFieldDecoration(String label) {
     return InputDecoration(
       labelText: label,
+      labelStyle: ApplicationTypography.titilliumWeb16RegularGray,
       prefixIcon: const Icon(Icons.search, color: ApplicationColors.gray),
     );
   }
