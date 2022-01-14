@@ -5,11 +5,19 @@ import 'package:intl/intl.dart';
 import '../style/application_typography.dart';
 
 class DateSelection extends StatefulWidget {
+  final String? arrivalDate;
+  final String? departureDate;
+  final String? Function()? arrivalValidator;
+  final String? Function()? departureValidator;
   final void Function(DateTime? date) updateArrivalDate;
   final void Function(DateTime? date) updateDepartureDate;
 
   const DateSelection({
     Key? key,
+    this.arrivalDate,
+    this.departureDate,
+    this.arrivalValidator,
+    this.departureValidator,
     required this.updateArrivalDate,
     required this.updateDepartureDate,
   }) : super(key: key);
@@ -19,8 +27,8 @@ class DateSelection extends StatefulWidget {
 }
 
 class _DateSelectionState extends State<DateSelection> {
-  final TextEditingController _arrivalDate = TextEditingController();
-  final TextEditingController _departureDate = TextEditingController();
+  late final TextEditingController _arrivalDate = TextEditingController(text: widget.arrivalDate);
+  late final TextEditingController _departureDate = TextEditingController(text: widget.departureDate);
 
   @override
   Widget build(BuildContext context) {
@@ -33,8 +41,9 @@ class _DateSelectionState extends State<DateSelection> {
             onTap: () => _updateDepartureDate(l10n),
             child: TextFormField(
               enabled: false,
-              style: ApplicationTypography.titilliumWeb15RegularGray,
               controller: _departureDate,
+              validator: (_) => widget.departureValidator?.call(),
+              style: ApplicationTypography.titilliumWeb15RegularGray,
               decoration: InputDecoration(labelText: l10n.departureDate),
             ),
           ),
@@ -45,8 +54,9 @@ class _DateSelectionState extends State<DateSelection> {
             onTap: () => _updateArrivalDate(l10n),
             child: TextFormField(
               enabled: false,
-              style: ApplicationTypography.titilliumWeb15RegularGray,
               controller: _arrivalDate,
+              validator: (_) => widget.arrivalValidator?.call(),
+              style: ApplicationTypography.titilliumWeb15RegularGray,
               decoration: InputDecoration(labelText: l10n.arrivalDate),
             ),
           ),
@@ -78,11 +88,14 @@ class _DateSelectionState extends State<DateSelection> {
   }
 
   Future<DateTime?> _datePicker() async {
+    final now = DateTime.now();
+    const fiftyYears = Duration(days: 18250);
+
     return await showDatePicker(
+      firstDate: now,
+      initialDate: now,
       context: context,
-      lastDate: DateTime(2050),
-      firstDate: DateTime.now(),
-      initialDate: DateTime.now(),
+      lastDate: now.add(fiftyYears),
     );
   }
 }
