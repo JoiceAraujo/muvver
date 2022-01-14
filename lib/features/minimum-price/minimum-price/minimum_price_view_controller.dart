@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../home/home/home_view_controller.dart';
+import '../../transportation-success/transportation-success/transportation_success_view_controller.dart';
 import 'minimum_price_view.dart';
 import 'minimum_price_view_model.dart';
 
@@ -32,8 +33,7 @@ class _MinimumPriceViewControllerState extends State<MinimumPriceViewController>
     };
 
     widget.viewModel.onTapGoForward = () {
-      // TODO: Implement success view
-      debugPrint('Success view');
+      Navigator.pushNamed(context, TransportationSuccessViewController.route);
     };
   }
 }
