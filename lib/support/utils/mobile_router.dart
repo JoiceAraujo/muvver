@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../features/home/home/home_view_controller.dart';
 import '../../features/home/home_factory.dart';
+import '../../features/minimum-price/minimum-price/minimum_price_view_controller.dart';
+import '../../features/minimum-price/minimum_price_factory.dart';
 import '../../features/package-size/package-size/package_size_view_controller.dart';
 import '../../features/package-size/package_size_factory.dart';
 import '../../features/package-weight/package-weight/package_weight_view_controller.dart';
@@ -20,5 +22,6 @@ class MobileRouter {
     TransportationRouteViewController.route: (_) => TransportationRouteFactory.transportationRoute(),
     PackageSizeViewController.route: (_) => PackageSizeFactory.packageSize(),
     PackageWeightViewController.route: (_) => PackageWeightFactory.packageWeight(),
+    MinimumPriceViewController.route: (_) => MinimumPriceFactory.minimumPrice(),
   };
 }
