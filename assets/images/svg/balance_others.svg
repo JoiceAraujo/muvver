@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink" width="32.005" height="32.005" viewBox="0 0 32.005 32.005">
+  <defs>
+    <!-- <style>.a{fill:none;}.b{fill:url(#a);}.c{fill:#159f59;}.d{fill:#fff;font-size:9px;font-family:TitilliumWeb-SemiBold, Titillium Web;font-weight:600;}</style> -->
+    <linearGradient id="a" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#22d57b"/>
+      <stop offset="1" stop-color="#159f59"/>
+    </linearGradient>
+  </defs>
+  <rect fill="none" width="32.005" height="32.005"/>
+  <path fill="url(#a)" d="M13.335,12H0v-11a1,1,0,0,1,1-1H5.334V5.329H8V-.005h4.334a1,1,0,0,1,1,1V12Z" transform="translate(9.332 2.672)"/>
+  <rect fill="#159f59" width="2.667" height="8.001" transform="translate(14.669 16.002)"/>
+  <path fill="url(#a)" d="M.667,2A.667.667,0,0,1,0,1.334V0H21.335V1.334A.666.666,0,0,1,20.669,2Z" transform="translate(5.334 14.002)"/>
+  <rect fill="url(#a)" width="16.002" height="10.668" rx="1" transform="translate(8.001 18.67)"/>
+  <text fill="#ffffff" font-size="9px" font-family="TitilliumWeb-SemiBold, Titillium Web" font-weight="600" transform="translate(16.002 27.002)">
+    <tspan x="-1.984" y="0">?</tspan>
+  </text>
+</svg>

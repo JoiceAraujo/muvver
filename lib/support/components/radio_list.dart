@@ -27,6 +27,7 @@ class RadioList<T> extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.separated(
       shrinkWrap: true,
+      padding: EdgeInsets.zero,
       itemCount: values.length,
       itemBuilder: _itemBuilder,
       separatorBuilder: _separatorBuilder,

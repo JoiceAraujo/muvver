@@ -41,5 +41,12 @@
   "packageSizeSimilarTo": "O volume que você pode deslocar tem tamanho similar a que?",
   "beMuvver": "Ser um Muvver",
   "sizes": "Tamanhos",
-  "skipStep": "Pular Etapa"
+  "skipStep": "Pular Etapa",
+  "weight": "Peso",
+  "packageWeight": "Qual o peso do volume?",
+  "upToOneKilo": "Até 1 kg",
+  "upToFiveKilos": "Até 5 kg",
+  "upToTenKilos": "Até 10 kg",
+  "upToTwentyKilos": "Até 20 kg",
+  "other": "Outro"
 }

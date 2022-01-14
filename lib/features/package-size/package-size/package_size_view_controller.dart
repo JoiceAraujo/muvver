@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../home/home/home_view_controller.dart';
+import '../../package-weight/package-weight/package_weight_view_controller.dart';
 import 'package_size_view.dart';
 import 'package_size_view_model.dart';
 
@@ -32,11 +33,11 @@ class _PackageSizeViewControllerState extends State<PackageSizeViewController> {
     };
 
     widget.viewModel.onTapSkipStep = () {
-      debugPrint('Implements navigator to weight package');
+      Navigator.pushNamed(context, PackageWeightViewController.route);
     };
 
     widget.viewModel.onTapGoForward = () {
-      debugPrint('Implements navigator to weight package');
+      Navigator.pushNamed(context, PackageWeightViewController.route);
     };
   }
 }
