@@ -48,5 +48,9 @@
   "upToFiveKilos": "Até 5 kg",
   "upToTenKilos": "Até 10 kg",
   "upToTwentyKilos": "Até 20 kg",
-  "other": "Outro"
+  "other": "Outro",
+  "minimumPriceDisplacement": "Definir preço mínimo do deslocamento?",
+  "deliveryPrice": "Preço de entrega",
+  "suggestedValue": "Valor sugerido",
+  "specificPrice": "Clique no valor acima, para um preço mais específico."
 }
