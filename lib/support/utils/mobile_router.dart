@@ -4,6 +4,8 @@ import '../../features/home/home/home_view_controller.dart';
 import '../../features/home/home_factory.dart';
 import '../../features/package-size/package-size/package_size_view_controller.dart';
 import '../../features/package-size/package_size_factory.dart';
+import '../../features/package-weight/package-weight/package_weight_view_controller.dart';
+import '../../features/package-weight/package_weight_factory.dart';
 import '../../features/transport_type/transport_type/transport_type_view_controller.dart';
 import '../../features/transport_type/transport_type_factory.dart';
 import '../../features/transportation_route/transportation_route/transportation_route_view_controller.dart';
@@ -17,5 +19,6 @@ class MobileRouter {
     TransportTypeViewController.route: (_) => TransportTypeFactory.transportType(),
     TransportationRouteViewController.route: (_) => TransportationRouteFactory.transportationRoute(),
     PackageSizeViewController.route: (_) => PackageSizeFactory.packageSize(),
+    PackageWeightViewController.route: (_) => PackageWeightFactory.packageWeight(),
   };
 }
