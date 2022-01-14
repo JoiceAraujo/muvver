@@ -24,6 +24,7 @@ class Constants {
   static const String logoPath = '$imagesPath/svg/logo.svg';
   static const String mapPointerIconPath = '$imagesPath/svg/map_pointer.svg';
   static const String motorcycleIconPath = '$imagesPath/svg/motorcycle.svg';
+  static const String sendIconPath = '$imagesPath/svg/send.svg';
   static const String shoeBoxIconPath = '$imagesPath/svg/shoe_box.svg';
   static const String trainIconPath = '$imagesPath/svg/train.svg';
   static const String truckIconPath = '$imagesPath/svg/truck.svg';
