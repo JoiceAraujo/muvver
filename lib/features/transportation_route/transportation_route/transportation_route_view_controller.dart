@@ -29,7 +29,9 @@ class _TransportationRouteViewControllerState extends State<TransportationRouteV
 
   void _bind() {
     widget.viewModel.onTapGoForward = () {
-      Navigator.pushNamed(context, PackageSizeViewController.route);
+      final transportation = widget.viewModel.transportation;
+
+      Navigator.pushNamed(context, PackageSizeViewController.route, arguments: transportation);
     };
 
     widget.viewModel.onTapCancel = () {

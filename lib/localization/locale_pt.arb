@@ -56,5 +56,8 @@
   "tripCreated": "Viagem criada",
   "checkingPackages": "Vamos ver os volumes já disponíveis para a sua viagem.",
   "veracityDeclaration": "Ao prosseguir, você declara para efeitos legais, administrativos, jurídicos e demais aplicáveis, a veracidade de todas as informações prestadas antes, durante e após qualquer uma das etapas do app.",
-  "viewPackages": "Visualizar volumes"
+  "viewPackages": "Visualizar volumes",
+  "emptyFieldMessage": "Campo obrigatório",
+  "arrivalBeforeDepartureMessage": "A data de chegada não pode ser antes da partida",
+  "departureAfterArrivalMessage": "A data de partida não pode ser depois da chegada"
 }

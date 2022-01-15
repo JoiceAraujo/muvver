@@ -32,12 +32,14 @@ class _PackageSizeViewControllerState extends State<PackageSizeViewController> {
       Navigator.popUntil(context, ModalRoute.withName(HomeViewController.route));
     };
 
-    widget.viewModel.onTapSkipStep = () {
-      Navigator.pushNamed(context, PackageWeightViewController.route);
-    };
+    widget.viewModel.onTapSkipStep = _goForward;
 
-    widget.viewModel.onTapGoForward = () {
-      Navigator.pushNamed(context, PackageWeightViewController.route);
-    };
+    widget.viewModel.onTapGoForward = _goForward;
+  }
+
+  void _goForward() {
+    final transportation = widget.viewModel.transportation;
+
+    Navigator.pushNamed(context, PackageWeightViewController.route, arguments: transportation);
   }
 }

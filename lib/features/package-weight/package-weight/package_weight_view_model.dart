@@ -1,19 +1,27 @@
 import 'package:flutter_gen/gen_l10n/localization.dart';
 
+import '../../../models/transportation.dart';
 import '../../../support/utils/constants.dart';
 import 'package_weight_view.dart';
 
 abstract class PackageWeightProtocol extends PackageWeightViewModelProtocol {
+  Transportation get transportation;
+
   void Function()? onTapCancel;
   void Function()? onTapSkipStep;
   void Function()? onTapGoForward;
 }
 
 class PackageWeightViewModel extends PackageWeightProtocol {
-  PackageWeight? _packageWeight;
+  final Transportation _transportation;
 
   @override
-  PackageWeight? get packageWeight => _packageWeight;
+  Transportation get transportation => _transportation;
+
+  @override
+  PackageWeight? get packageWeight => _transportation.packageWeight;
+
+  PackageWeightViewModel(this._transportation);
 
   @override
   void Function()? didTapCancel() {
@@ -22,6 +30,7 @@ class PackageWeightViewModel extends PackageWeightProtocol {
 
   @override
   void Function()? didTapSkipStep() {
+    _transportation.packageWeight = null;
     onTapSkipStep?.call();
   }
 
@@ -32,7 +41,7 @@ class PackageWeightViewModel extends PackageWeightProtocol {
 
   @override
   void updatePackageWeight(PackageWeight? value) {
-    _packageWeight = value;
+    _transportation.packageWeight = value;
     notifyListeners();
   }
 

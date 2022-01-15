@@ -33,7 +33,13 @@ class _MinimumPriceViewControllerState extends State<MinimumPriceViewController>
     };
 
     widget.viewModel.onTapGoForward = () {
-      Navigator.pushNamed(context, TransportationSuccessViewController.route);
+      debugPrint(widget.viewModel.transportation.toString());
+
+      Navigator.pushNamedAndRemoveUntil(
+        context,
+        TransportationSuccessViewController.route,
+        ModalRoute.withName(HomeViewController.route),
+      );
     };
   }
 }
